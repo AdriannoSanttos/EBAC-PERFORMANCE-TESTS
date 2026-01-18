@@ -1,60 +1,18 @@
-# Getting started with your app
+# EBAC Performance Tests
 
-## Available Scripts
+Este projeto contém testes de performance para a API EBAC Demo Store, utilizando **k6**.
 
-In the project directory you can run:
+## Estrutura do Projeto
 
-### `npm start`
+- `tests/k6/produtos.test.js` - Testes de performance para os endpoints de produtos
+- `tests/k6/clientes.test.js` - Testes de performance para os endpoints de clientes
+- `tests/k6/mock-api/mock-api.js` - Mock API utilizada para testes (rodando na porta 3001)
+- `produtos.log` / `clientes.log` - Logs dos testes executados
 
-Runs the app in the development mode.
-By default, it is accessible at http://localhost:3000
+## Como executar
 
-### `npm test`
+1. Inicie a Mock API:
 
-Launches the test runner.
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.
-
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
-
-## Development
-
-Make sure you have Node.js 14, npm, and Docker installed.
-
-- Instal Yarn
-```
-npm install -g yarn
-```
-
-- Install dependencies
-
-```
-yarn install
-```
-
-- Generate Prisma client
-
-```
-npm run prisma:generate
-```
-
-- Start database in Docker
-
-```
-npm run docker:db
-```
-
-- Initiate the database
-
-```
-npm run db:init
-```
-
-- Start the server
-
-```
-yarn start
-```
+```bash
+cd tests/k6/mock-api
+node mock-api.js
